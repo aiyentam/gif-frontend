@@ -49,3 +49,5 @@ class Gifs extends Component {
     );
   }
 }
+
+export default Gifs;

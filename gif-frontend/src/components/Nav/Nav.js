@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Gifs from "./gifs";
+import Gifs from "../Gifs/Gifs";
 
 class Nav extends Component {
   constructor(props) {
