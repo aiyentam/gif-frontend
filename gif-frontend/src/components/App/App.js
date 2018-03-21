@@ -9,7 +9,6 @@ import {
 
 import axios from "axios";
 import "./App.css";
-import Nav from "../Nav/Nav";
 import CreateGif from "../Gifs/CreateGif";
 import EditGif from "../Gifs/EditGif";
 
@@ -76,13 +75,16 @@ class App extends Component {
             <a href="https://giphy.com/" className="logo">
               GAphy
             </a>
+            <Link to="/create">
+              <button>add</button>
+            </Link>
+            <Link to="/edit">
+              <button>edit</button>
+            </Link>
           </div>
-          <div>
-            <span>Uploaded Gifs</span>
-            <div className="uploads">image here</div>
-          </div>
+
           <Switch>
-            <Router
+            <Route
               path="/create"
               render={props => {
                 return (
@@ -94,7 +96,7 @@ class App extends Component {
                 );
               }}
             />
-            <Router
+            <Route
               path="/edit"
               render={props => {
                 return (
@@ -107,6 +109,10 @@ class App extends Component {
               }}
             />
           </Switch>
+          <div className="uploads">
+            <h4>Uploaded Gifs</h4>
+            <div>image here</div>
+          </div>
         </div>
       </Router>
     );
