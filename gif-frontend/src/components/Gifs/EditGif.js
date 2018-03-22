@@ -16,9 +16,8 @@ class EditGif extends Component {
                 <input type="text" onChange={this.props.handleChangeUrl} />
                 <button type="submit">Submit</button>
                 <button type="submit" className="textdeco">
-                  <a href="/">Cancel</a>
+                  <a href="/">Exit</a>
                 </button>
-                <button type="submit">Delete</button>
               </form>
             </div>
           </div>

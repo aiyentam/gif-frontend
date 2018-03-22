@@ -17,7 +17,7 @@ class CreateGif extends Component {
                   <input type="text" onChange={this.props.handleChangeUrl} />
                   <button type="submit">Submit</button>
                   <button type="submit" className="textdeco">
-                    <a href="/">Cancel</a>
+                    <a href="/">Exit</a>
                   </button>
                 </form>
               </div>
