@@ -24,20 +24,18 @@ class App extends Component {
   }
 
   handleChangeName(event) {
-    console.log(event.target.value.toLowerCase());
     this.setState({
-      gif: { ...this.state.gif, name: event.target.value.toLowerCase() }
+      gif: { ...this.state.gif, name: event.target.value }
     });
   }
 
   handleChangeUrl(event) {
     this.setState({
-      gif: { ...this.state.gif, imgUrl: event.target.value.toLowerCase() }
+      gif: { ...this.state.gif, imgUrl: event.target.value }
     });
   }
 
   handleSubmit(event) {
-    // alert("You submitted a Gif!");
     event.preventDefault();
     const uploadedImg = {
       name: this.state.gif.name,
@@ -54,15 +52,12 @@ class App extends Component {
   }
 
   handleDelete(event) {
-    const arrayToDeleteFrom = this.state.gifs;
-    console.log("Size Before: " + arrayToDeleteFrom);
-    console.log(event.target.value);
     const objectId = this.state.gifs[event.target.value]._id;
     console.log(objectId);
 
     axios.delete("http://localhost:3001/gifs/" + objectId).then(res => {
       const gifs = res.data;
-      this.setState({ gifs });
+      this.setState({ gifs: gifs });
       console.log(this.state.gifs.length);
     });
   }
@@ -72,7 +67,7 @@ class App extends Component {
       .get("http://localhost:3001/gifs")
       .then(res => {
         const gifs = res.data;
-        this.setState({ gifs });
+        this.setState({ gifs: gifs });
       })
       .catch(err => {
         console.log(err);
@@ -123,7 +118,7 @@ class App extends Component {
               {this.state.gifs.map((gif, index) => {
                 return (
                   <div key={index} className="imgs">
-                    <img src={gif.url} className="gif" />
+                    <img src={gif.url} alt="gif" className="gif" />
                     <span className="gifTitle">{gif.name}</span>
                     <Link to="/edit">
                       <button>edit</button>
