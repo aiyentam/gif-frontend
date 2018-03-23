@@ -14,10 +14,10 @@ class EditGif extends Component {
                 <input type="text" onChange={this.props.handleChangeName} />
                 <label>Url</label>
                 <input type="text" onChange={this.props.handleChangeUrl} />
-                <button type="submit">Submit</button>
-                <button type="submit" className="textdeco">
-                  <a href="/">Exit</a>
-                </button>
+                <button type="submit">submit</button>
+                <a class="linkButton" href="/">
+                  exit
+                </a>
               </form>
             </div>
           </div>
